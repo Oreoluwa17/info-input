@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WeCollect — Data Portal Discovery Survey</title>
+<title>WeCollect  Data Portal Discovery Survey</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
@@ -292,11 +292,11 @@ const ACCESS=[
   {id:"report",  label:"Structured Reports", sub:"Formatted insights, not raw data"},
 ];
 const INTEREST=[
-  {id:"5",label:"Definitely — I'd use this now"},
-  {id:"4",label:"Very likely — once it covers my needs"},
-  {id:"3",label:"Possibly — depends on scope & quality"},
-  {id:"2",label:"Unlikely — but worth monitoring"},
-  {id:"1",label:"Not for me — but I know who might need it"},
+  {id:"5",label:"Definitely  I'd use this now"},
+  {id:"4",label:"Very likely  once it covers my needs"},
+  {id:"3",label:"Possibly  depends on scope & quality"},
+  {id:"2",label:"Unlikely  but worth monitoring"},
+  {id:"1",label:"Not for me  but I know who might need it"},
 ];
 
 /* ── Helpers ──────────────────────────────────────────── */
@@ -408,7 +408,7 @@ function App(){
           <div className="ty">
             <div className="ty-ico">✦</div>
             <h2>Thank you, {form.name.split(" ")[0]}.</h2>
-            <p>Your input matters. We're mapping demand before building — your response helps us understand whether and how to build these data portals.</p>
+            <p>Your input matters. We're mapping demand before building  your response helps us understand whether and how to build these data portals.</p>
             <div className="chips">
               {dsLabels.slice(0,6).map(l=><span className="chip" key={l}>{l}</span>)}
               {dsLabels.length>6&&<span className="chip">+{dsLabels.length-6} more</span>}
@@ -416,7 +416,7 @@ function App(){
             {syncState==="ok"&&
               <div className="sync-badge sync-ok">✓ Response synced to WeCollect database</div>}
             {syncState==="err"&&
-              <div className="sync-badge sync-err">⚠ Saved locally — sheet sync failed</div>}
+              <div className="sync-badge sync-err">⚠ Saved locally  sheet sync failed</div>}
             {syncState==="skipped"&&
               <div className="sync-badge sync-pend">○ Saved locally</div>}
             {syncState==="syncing"&&
@@ -425,7 +425,7 @@ function App(){
               We'll reach out as the portals take shape. Feel free to forward this link to a colleague.
             </p>
             <button className="admbtn" onClick={()=>setShowR(v=>!v)}>
-              {showR?"Hide":"View"} all responses ({responses.length||"—"})
+              {showR?"Hide":"View"} all responses ({responses.length||""})
             </button>
             {showR&&(
               <div className="rp">
@@ -433,14 +433,14 @@ function App(){
                   ?<p style={{color:"var(--muted)",fontSize:12,textAlign:"center",padding:12}}>No responses yet.</p>
                   :responses.map((r,i)=>(
                     <div className="ri2" key={i}>
-                      <div className="rn">{r.name}{r.title?` — ${r.title}`:""}</div>
+                      <div className="rn">{r.name}{r.title?`  ${r.title}`:""}</div>
                       <div className="ro">{r.org} · {r.sector} · {r.email}</div>
                       <div className="rtags">
                         {(r.datasets||[]).slice(0,5).map(d=>(
                           <span className="rtag" key={d}>{ALL_DATASETS.find(x=>x.id===d)?.label||d}</span>
                         ))}
                         {r.otherDataset&&<span className="rtag" style={{background:"#F0F0FF",color:"#4748D2"}}>{r.otherDataset}</span>}
-                        {r.interest&&<span className="rtag" style={{background:"#E8F8EE",color:"#276749"}}>{INTEREST.find(x=>x.id===r.interest)?.label?.split(" — ")[0]}</span>}
+                        {r.interest&&<span className="rtag" style={{background:"#E8F8EE",color:"#276749"}}>{INTEREST.find(x=>x.id===r.interest)?.label?.split("  ")[0]}</span>}
                       </div>
                       {r.biggestGap&&<p style={{fontSize:11,color:"var(--mid)",marginTop:6,fontStyle:"italic"}}>"{r.biggestGap}"</p>}
                     </div>
@@ -457,8 +457,15 @@ function App(){
   return(
     <div style={{width:"100%",display:"flex",flexDirection:"column",alignItems:"center"}}>
       <div className="topbar">
-        <div className="wordmark"><span className="wm-we">we</span><span className="wm-collect">collect</span></div>
-        <div className="badge">Data Portals — Discovery Survey</div>
+        <div ><a href="/" className="inline-block focus:outline-none">
+  <img 
+    src="logo.svg" 
+    alt="Wecollect logo" 
+    className="h-8 w-auto object-contain transition-transform duration-200 hover:scale-102"
+    loading="eager"
+  />
+</a></div>
+        <div className="badge">Data Portals  Discovery Survey</div>
       </div>
       <div className="card">
         <div className="prog">
@@ -471,7 +478,7 @@ function App(){
             <div className="intro-ico">💡</div>
             <div className="intro-txt">
               <strong>We're exploring an idea, not selling anything.</strong><br/>
-              WeCollect is researching whether open, verified field data portals would be genuinely useful across industries and institutions in Nigeria. Your candid input will shape what — and whether — we build.
+              WeCollect is researching whether open, verified field data portals would be genuinely useful across industries and institutions in Nigeria. Your candid input will shape what  and whether  we build.
             </div>
           </div>
           <div className="ch">
@@ -520,7 +527,7 @@ function App(){
         {step===2&&<>
           <div className="ch">
             <div className="slbl">Step 2 of 4</div>
-            <div className="stitle">If this existed — what data would you want?</div>
+            <div className="stitle">If this existed  what data would you want?</div>
             <div className="ssub">Imagine you had access to regularly updated, verified Nigerian field data. Which of these would be relevant to your work? Select as many as apply.</div>
           </div>
           <div className="cb">
@@ -538,7 +545,7 @@ function App(){
             ))}
             {/* Other */}
             <div className="cat-ttl" style={{color:"var(--muted)",borderColor:"var(--brand-bd)"}}>Something Else?</div>
-            <Ci label="Other — please describe below"
+            <Ci label="Other  please describe below"
               desc="A dataset type not listed above that would be valuable to you"
               sel={form.datasets.includes("other")}
               onT={()=>tog("datasets","other")}/>
@@ -552,7 +559,7 @@ function App(){
             <div className="fg">
               <label>What is the biggest data gap you face in your work right now?</label>
               <textarea
-                placeholder="e.g. We struggle to get reliable LGA-level demographic breakdowns — most available data stops at state level and we end up extrapolating..."
+                placeholder="e.g. We struggle to get reliable LGA-level demographic breakdowns  most available data stops at state level and we end up extrapolating..."
                 value={form.biggestGap}
                 onChange={e=>set("biggestGap",e.target.value)}/>
             </div>
@@ -598,7 +605,7 @@ function App(){
             <div className="fg">
               <label>Can you describe a specific project or decision this data would help with?</label>
               <textarea
-                placeholder="e.g. We run quarterly brand trackers but can only cover Lagos — this would let us extend to all 36 states..."
+                placeholder="e.g. We run quarterly brand trackers but can only cover Lagos  this would let us extend to all 36 states..."
                 value={form.whyUseful}
                 onChange={e=>set("whyUseful",e.target.value)}/>
             </div>
